@@ -1,0 +1,68 @@
+
+
+.js-lang
+
+ ==> scripting lang for web-pages in browser-envi
+ +
+ ==> Server-side lang on Node.js
+ ==> Mobile Native application
+
+ -----------------------------------------------
+
+ .js-lang features
+
+ ==> FP + OOP
+ ==> dynamic typed lang
+
+ ==> single-thread lang , but we do concurrent actions
+ ==> all IO operations are non-blocking
+
+ ------------------------------------------------
+
+ .js-lang is based on 'ECMAScript spec'
+
+ latest : ECMAScript-2015 or ES6  ==> ES7
+  
+
+ ------------------------------------------------
+
+ how to run .js-program ?
+
+    ==> using .js-runtime/engine
+
+  browser-envi
+
+    a. chrome  ==>  v8 -> c++ 
+    b. firefox ==>  rhino -> java
+    c. IE/Edge ==>  chakra
+    d. safar   ==>  nitro
+    ....
+
+  other-envi
+
+  a. Node.js  ==> v8
+  b. JVM      ==> nashorn
+  c. MongoDB
+  d. Apache CouchDB
+  ..
+
+  --------------------------------------------     
+   ' HelloWorld ' 
+  --------------------------------------------     
+
+    JS_ topics
+    ------------
+
+    1. data-types
+    2. execution-context / scope
+    3. FP in javascript
+    4. closures
+    5. 'this' keyword / context's owner
+    6. using prototypes & obj's constraints
+    7. ES6 - New syntax
+    8. JS - modules ( commonJS | ES modules)
+    9. concurrncy model with Event-Loop & Non-blocking IO concepts
+    10. Async APIs  ( Promise API & RxJS )
+
+
+--------------------------------------------     
