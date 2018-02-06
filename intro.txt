@@ -65,4 +65,25 @@
     10. Async APIs  ( Promise API & RxJS )
 
 
---------------------------------------------     
+--------------------------------------------
+
+
+ ECMAScript 2015 / ES6
+ -----------------------
+
+   1. New-syntax
+
+     a. let & const keywords with block-scope
+     b. function with default & rest params
+     c. string interpolation
+     d. de-structuring
+     e. obj-literal enhancements     
+     f. spread operator
+     g. symbol type
+     h. iterable objects
+     i. for-of loop
+     j. OO with class 
+     k. arrow-function
+   2. New APIs
+     
+     l. collections ( map,set,...)
