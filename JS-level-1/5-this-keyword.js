@@ -94,7 +94,7 @@ let e = { name: 'IBM' };
 
 //--------------------------------------------------------------------
 
-
+// constructor / class
 
 // function Person(name, age) {
 //     this.name = name;
@@ -169,30 +169,52 @@ let e = { name: 'IBM' };
 //-----------------------------------------------------------
 
 
+// function sessionStart() {
+//     function Trainer(name) {
+//         this.name = name;
+//         this.doTeach = function () {
+//             console.log(this.name + " teaching .js");
+//             let self = this;
+//             let doLearn = function () {
+//                 console.log(this.name + " learning .js from " + self.name);
+//             }
+//             return doLearn;
+//         }
+//     }
+//     function Employee(name) {
+//         this.name = name;
+//     }
+//     let tnr1 = new Trainer('Nag'); // constructor invocation
+//     let tnr2 = { name: 'Praveen' } 
+//     let e1 = new Employee('bala');
+//     let e2 = new Employee('jobin');
+//     let learn = tnr1.doTeach(); // method invocation
+//     // let learn = tnr1.doTeach.call(tnr2);
+//     learn.call(e1); // call/apply/bind invocation
+//     learn.call(e2);
+// }
+// sessionStart(); // function invocation
 
-function sessionStart() {
-    function Trainer(name) {
-        this.name = name;
-        this.doTeach = function () {
-            console.log(this.name + " teaching .js");
-            let self = this;
-            let doLearn = function () {
-                console.log(this.name + " learning .js from " + self.name);
-            }
-            return doLearn;
-        }
-    }
-    function Employee(name) {
-        this.name = name;
-    }
-    let tnr1 = new Trainer('Nag'); // constructor invocation
-    let tnr2 = { name: 'Praveen' } // constructor invocation
-    let e1 = new Employee('bala');
-    let e2 = new Employee('jobin');
-    let learn = tnr1.doTeach(); // method invocation
-    // let learn = tnr1.doTeach.call(tnr2);
-    learn.call(e1); // call/apply/bind invocation
-    learn.call(e2);
-}
-sessionStart(); // function invocation
 
+//-----------------------------------------------------
+
+// let tnr = {
+//     name: 'Nag',
+//     doTeach: function () {
+//         console.log(this.name + " teaching .js");
+//         let self = this;
+//         let learn = function () {
+//             console.log(this.name + " learning .js from " + self.name);
+//         }
+//         return learn;
+//     }
+// };
+// let learn = tnr.doTeach();
+
+// tnr = { name: 'Praveen' }; // New Tnr
+
+// let e1 = { name: 'IBM' };
+// learn.call(e1);
+
+
+//-----------------------------------------------------
