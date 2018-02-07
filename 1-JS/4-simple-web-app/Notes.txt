@@ -1,0 +1,112 @@
+
+
+
+what .js-program can do on web-page in browser-envi ?
+
+
+using browser provided web-apis, 
+.js-program can do any dynamic-actions on web-page
+
+using DOM API
+-------------
+ ---> can create,retreive,update,delete HTML elements
+ ---> can change element's inner text/html content
+ ---> can change element's attributes/properties
+ ---> can change element's style
+ ---> can listen events on elements
+ ---> can validate form-fields before submit
+ ---> can create rich UI components
+
+using XHR API
+--------------
+---> can comminicate with server-side async, update resp in existing page
+
+using Timer API
+----------------
+---> can execute any action on time timeout/interval
+
+
+HTML5 APIs
+-----------
+ref:
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+
+//------------------------------------------------------
+
+
+problems with plain-js ( your-code + browser APIs) for front-end appln developement
+-------------------------------------------------------
+
+==> browser compatibilty issues
+==> performance issues  ( i.e DOM manipulation oprns costly..
+==> memory issues       ( i.e cleaning un-used DOM elements ..)
+==> data-binding oprns are manual 
+==> code oraganization is difficult
+
+--------------------------------------
+
+soln :
+
+    ==> using third-party's .js lib & F.Ws
+
+    1. Jquery        
+
+            soln : simplify DOM & XHR apis
+
+    2. MVC & MVVM based lib & F.ws
+
+       - knockout
+       - ember
+       - AngularJs 1.x
+       ....
+
+       - DOJO
+       - ExtJS
+       ..
+
+    -------------------------------------------
+
+    w3c , web-component specification   ( draft )
+
+    -------------------------------------------
+
+    component based ( custom-elements ) based lib & F.W
+
+    React.JS  ==> Facebook
+    Angular   ==> Google Team
+    Vue
+    PolymerJs
+    ...
+
+
+   ---------------------------------------------------------
+
+
+
+
+
+    .js-lang is
+
+        --> all IO operations are non-blocking
+        --> single-threaded lang , though can execute concurrent actions
+        
+
+
+    -------------------------------------------------------
+
+
+    browser , e.g chrome
+
+      a. JS-runtime ( v8 )  : Ecmascrit spec
+
+         a. single-call-stack  --> to execute contexts/scopes
+         b. heap               --> to hold objects
+
+      b. Web APIs ( e.g DOM,XHR,Timer )  : w3c recommendations
+      c. Event-Queue
+      d. Event-Loop    
+
+
+    -------------------------------------------------------

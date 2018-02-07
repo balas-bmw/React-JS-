@@ -264,23 +264,136 @@ by default , regular function(s)
 
 */
 
-let tnr = {
-    name: 'Nag',
-    doTeach: function () {
-        console.log(this.name + " teaching .js");
-        // let askQues = function (q) {
-        //     console.log(this.name + " answering " + q);
-        // }
-        // or
-        let askQues = (q) => {
-            console.log(this.name + " answering " + q);
-        }
-        console.log(this.name + " teaching .js - ends");
-        return askQues;
-    }
-}
+// let tnr = {
+//     name: 'Nag',
+//     doTeach: function () {
+//         console.log(this.name + " teaching .js");
+//         // let askQues = function (q) {
+//         //     console.log(this.name + " answering " + q);
+//         // }
+//         // or
+//         let askQues = (q) => {
+//             console.log(this.name + " answering " + q);
+//         }
+//         console.log(this.name + " teaching .js - ends");
+//         return askQues;
+//     }
+// }
 
-let askQues = tnr.doTeach();
-askQues('Q1');
-let newTnr = { name: 'Praveen' }
-askQues.call(newTnr, "Q2");
+// let askQues = tnr.doTeach();
+// askQues('Q1');
+// let newTnr = { name: 'Praveen' }
+// askQues.call(newTnr, "Q2");
+
+
+//--------------------------------------------------------------------
+
+
+// Quiz
+
+
+// let invoice = {
+//     num: 123,
+//     process: function () {
+//         console.log('INV-' + this.num + " processed")
+//     }
+// }
+
+
+// let invoice = {
+//     num: 123,
+//     process: () => {
+//         console.log('INV-' + this.num + " processed")
+//     }
+// }
+
+
+// let invoice = {
+//     num: 123,
+//     process: function () {
+//         console.log('INV-' + this.num + " processed partially")
+//         return function () {
+//             console.log('INV-' + this.num + " processed completly")
+//         }
+//     }
+// }
+
+
+// let invoice = {
+//     num: 123,
+//     process: function () {
+//         console.log('INV-' + this.num + " processed partially")
+//         return () => {
+//             console.log('INV-' + this.num + " processed completly")
+//         }
+//     }
+// }
+
+
+// let complete = invoice.process();
+// complete();
+
+
+// imp-note : event-handler func always runs by event-emitter
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+
+//     // let self = this;
+//     // let incAge = function () {
+//     //     console.log(this);
+//     //     self.age++;
+//     //     console.log(self.name + "-" + self.age);
+//     // }
+
+//     let incAge = () => {
+//         console.log(this);
+//         this.age++;
+//         console.log(this.name + "-" + this.age);
+//     }
+//     setInterval(incAge, 1000);  // event 
+// }
+
+// new Person('Ria', 0);
+
+
+
+//--------------------------------------------------------------------
+
+// l. collections ( map,set,...)
+
+/*
+    - array
+
+    - set, weakset
+    - map, weakmap
+*/
+
+// let set = new Set();
+// set.add('pizaa');
+// set.add('pizaa');
+// set.add('burger');
+
+// console.log(set);
+
+
+
+
+// let car1 = { name: 'Audi' }
+// let car2 = { name: 'BMW' }
+
+// let ow1 = { name: 'Nag' };
+// let ow2 = { name: 'Ria' };
+
+// let map = new Map();
+// map.set(ow1, car1);
+// map.set(ow2, car2);
+
+// console.log(map.get(ow1));
+
+
+//--------------------------------------------------------------------
+
+
+

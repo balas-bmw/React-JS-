@@ -1,0 +1,165 @@
+
+
+.js-lang
+
+ ==> scripting lang for web-pages in browser-envi
+ +
+ ==> Server-side lang on Node.js
+ ==> Mobile Native application
+
+ -----------------------------------------------
+
+ .js-lang features
+
+ ==> FP + OOP
+ ==> dynamic typed lang
+
+ ==> single-thread lang , but we do concurrent actions
+ ==> all IO operations are non-blocking
+
+ ------------------------------------------------
+
+ .js-lang is based on 'ECMAScript spec'
+
+ latest : ECMAScript-2015 or ES6  ==> ES7
+  
+
+ ------------------------------------------------
+
+ how to run .js-program ?
+
+    ==> using .js-runtime/engine
+
+  browser-envi
+
+    a. chrome  ==>  v8 -> c++ 
+    b. firefox ==>  rhino -> java
+    c. IE/Edge ==>  chakra
+    d. safar   ==>  nitro
+    ....
+
+  other-envi
+
+  a. Node.js  ==> v8
+  b. JVM      ==> nashorn
+  c. MongoDB
+  d. Apache CouchDB
+  ..
+
+  --------------------------------------------     
+   ' HelloWorld ' 
+  --------------------------------------------     
+
+    JS_ topics
+    ------------
+
+    1. data-types
+    2. execution-context / scope
+    3. FP in javascript
+    4. closures
+    5. 'this' keyword / context's owner
+    6. using prototypes & obj's constraints
+    7. ES6 - New syntax
+    8. JS - modules ( commonJS | ES6 modules)
+    9. concurrncy model with Event-Loop & Non-blocking IO concepts
+    10. Async APIs  ( Promise API & RxJS )
+
+
+--------------------------------------------
+
+
+ ECMAScript 2015 / ES6
+ -----------------------
+
+   1. New-things
+
+     a. let & const keywords with block-scope
+     b. function with default & rest params
+     c. string interpolation
+     d. de-structuring
+     e. obj-literal enhancements     
+     f. spread operator
+     g. symbol type
+     h. iterable objects
+     i. for-of loop
+     j. OO with class 
+     k. arrow-function
+     l. collections ( map,set,...)
+
+   ------------------------------------------
+
+
+   problems with .js-developement without module-standard  & module-loader
+
+
+   ==> global-naming collisions
+        --> soln : using self-executable function pattern
+   ==> loading dependency modules in order is manual
+
+
+   soln :  using module standard & loaders
+
+   from third-party
+   ------------------
+
+   a. AMD ( Async Module Definition ) api
+
+      -define
+      -require
+
+      e.g Require.js ==> AMD spec based module loader
+
+   b. commonJS
+   c. UMD
+
+      
+
+  commonJS module standard
+  -------------------------
+
+
+     --> every .js file is module by default
+     --> all variable & functions in .js file are private to that module by default
+     --> to abstarct/export members to other module , use 'module.exports' 
+     --> to require/import module , use 'require()'
+     --> we can group related modules inot packages with description file ( package.json )
+
+     Node.js runtime already impleted this standard as default module standard
+
+     -----------------------------------------------------
+
+
+     NPM ( Node Package Manager )
+     -----------------------------
+
+
+       -> cli tool , always exist in Node.js runtime
+
+       why we need ?
+
+       -> to publish/install .js packages from 'npm repository'
+       -> to mange application build-life-cycle
+
+
+    -----------------------------------------------------
+
+
+
+    ECMAScript spec   ( in ES6 )
+    ------------------------------
+
+
+    ES6 modules standard
+    ---------------------
+
+
+
+     --> every .js file is module by default
+     --> all variable & functions in .js file are private to that module by default
+     --> to abstarct/export members to other module , use 'export' 
+     --> to require/import module , use 'import'
+     --> we can group related modules inot packages with description file ( package.json )
+
+
+
+
