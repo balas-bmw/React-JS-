@@ -1,0 +1,22 @@
+
+
+HTML tag/element/component
+----------------------------
+
+    --> instances of HTMLXXXXElement class
+
+    e.g 
+    
+    HTMLInputElement  : compoennt's class
+
+    <input id="xx" name="yy" ..../>         : compoenent
+
+        - props  e.g id,name,type,....
+        - state  e.g value
+
+    component
+
+        - props  -> immutable
+        - state  -> mutable
+
+    ----------------------------------    

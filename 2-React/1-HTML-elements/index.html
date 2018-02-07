@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> HTML - elements </h1>
+    <hr/>
+
+    <div>
+        <input id="inp1" type="text" onchange="handleChange()" />
+        <hr/> count :
+        <span id="display"></span>
+    </div>
+
+    <script>
+        var inp1 = document.getElementById('inp1'); //
+        var spanEle = document.getElementById('display'); //
+
+        var count = 0;
+        setInterval(() => {
+            count++;
+            inp1.value = count;
+            inp1.dispatchEvent(new Event('change'));
+        }, 3000);
+
+        function handleChange() {
+            spanEle.innerText = count;
+        }
+
+    </script>
+
+</body>
+
+</html>
