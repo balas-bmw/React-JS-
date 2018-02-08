@@ -7,18 +7,17 @@ class HitButton extends Component {
         this.state = {
             count: 0
         };
-
         //this.handleBtnClick = this.handleBtnClick.bind(this);
-
         console.log('HitButton instance created');
     }
 
     handleBtnClick() {
+        let { label } = this.props;
         this.setState({
-            count: this.state.count + 1
+            count: this.state.count + Number.parseInt(label)
         })
         let { onHit } = this.props;
-        onHit();
+        onHit(Number.parseInt(label));
     }
 
     render() {
@@ -26,10 +25,12 @@ class HitButton extends Component {
         let { label } = this.props;
         let { count } = this.state;
         return (
-            <div>
-                <button onClick={() => { this.handleBtnClick() }} className="btn btn-primary">
-                    {label} => <span className="badge">{count}</span>
-                </button>
+            <div style={{ float: 'left' }}>
+                <div class="well">
+                    <button onClick={() => { this.handleBtnClick() }} className="btn btn-primary">
+                        {label} => <span className="badge">{count}</span>
+                    </button>
+                </div>
             </div>
         );
     }

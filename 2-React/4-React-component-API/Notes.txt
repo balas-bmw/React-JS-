@@ -1,0 +1,9 @@
+
+
+React component's Life-cycle
+----------------------------
+
+    1. Mounting
+        - constructor
+    2. Updating
+    3. UnMounting

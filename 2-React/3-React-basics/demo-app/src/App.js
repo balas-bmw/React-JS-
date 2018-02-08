@@ -15,8 +15,8 @@ class App extends Component {
     console.log('App instance created');
   }
 
-  incrementTotalCount() {
-    this.setState({ totalCount: this.state.totalCount + 1 });
+  incrementTotalCount(n) {
+    this.setState({ totalCount: this.state.totalCount + n });
   }
 
   render() {
@@ -25,13 +25,21 @@ class App extends Component {
     return (
       <div className="container">
         <div className="page-header"> React basics </div>
-        <HitButton label="+1" onHit={() => { this.incrementTotalCount() }} />
-        <HitButton label="+10" onHit={() => { this.incrementTotalCount() }} />
-        <HitButton label="-10" onHit={() => { this.incrementTotalCount() }} />
-        <HitButton label="-1" onHit={() => { this.incrementTotalCount() }} />
-        <hr />
-        <TotalCountDisplay total={totalCount} />
-      </div>
+        <div className="panel panel-default">
+          <div className="panel-heading">App Component  : {totalCount}</div>
+          <div className="panel-body">
+            <div style={{ display: 'inline' }}>
+              <HitButton label="1" onHit={(n) => { this.incrementTotalCount(n) }} />
+              <HitButton label="10" onHit={(n) => { this.incrementTotalCount(n) }} />
+              <HitButton label="-10" onHit={(n) => { this.incrementTotalCount(n) }} />
+            </div>
+            <div style={{ clear: 'both' }}>
+              <hr />
+              <TotalCountDisplay total={totalCount} />
+            </div>
+          </div>
+        </div>
+      </div >
     );
   }
 }

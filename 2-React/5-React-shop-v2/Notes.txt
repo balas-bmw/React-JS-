@@ -1,0 +1,51 @@
+
+
+
+steps to develope react-based web-application:
+-----------------------------------------------
+
+ref : https://reactjs.org/docs/thinking-in-react.html
+
+
+Step 1: Break The UI Into A Component Hierarchy
+
+    e.g
+
+        - App
+            -Product
+                -Review(s)
+                -ReviewForm
+
+Step 2: Build A Static Version in React
+
+
+Step 3: Identify The Minimal (but complete) Representation Of UI State                
+
+        Ques ?
+
+        - Is it passed in from a parent via props? If so, it probably isn’t state.
+        - Does it remain unchanged over time? If so, it probably isn’t state.
+        - Can you compute it based on any other state or props in your component? If so, it isn’t state.
+
+Step 4: Identify Where Your State Should Live
+
+
+        - Identify every component that renders something based on that state.         
+        - Find a common owner component
+        - Either the common owner or another component higher up in the hierarchy should own the state.
+        - if you can’t find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+
+Step 5: Add Inverse Data Flow
+
+------------------------------------------------------------------
+
+
+
+problems when managing UI-application's state at UI-components
+
+--> component will become too complex
+--> unit-testing not possible
+--> state-flow b/w components by props makes appln too complex
+
+
+----------------------------------------------------------------   

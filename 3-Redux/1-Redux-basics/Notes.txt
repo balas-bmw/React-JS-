@@ -1,0 +1,15 @@
+
+
+//  e.g Counter UI-App , Shop UI Appp
+---------------------------------------
+
+step-1 : Actions
+
+    - INCREMENT
+    - DECREMENT
+
+    - LOAD_PRODUCTS
+    - BUY
+    - ADD_NEW_REVIEW
+
+    
