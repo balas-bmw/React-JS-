@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as counterActions from './actions/counter'
+import PM from './views/PM';
 
 class App extends Component {
   render() {
@@ -21,6 +22,9 @@ class App extends Component {
           onDecrement={() => counterActions.decrement(1)}
         /> */
         }
+
+        <PM />
+
       </div>
     );
   }
