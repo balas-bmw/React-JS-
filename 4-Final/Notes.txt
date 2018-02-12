@@ -1,0 +1,5 @@
+
+
+1. Higher-Order-Component ( HOC ) pattern
+
+    ref: https://reactjs.org/docs/higher-order-components.html

@@ -6,13 +6,14 @@ import $ from 'jquery';
 
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-//-------------------------------------------
+//-------------------------------------------------------------------------------------
 // Action(s)
 const INCREMENT = 'increment';
 const DECREMENT = 'decrement';
+const ADD_NEW_REVIEW_BEGIN = 'add_new_begin';
 const ADD_NEW_REVIEW = 'add_new_review';
-//-------------------------------------------
-
+const ADD_NEW_REVIEW_ERROR = 'add_new_review_error';
+//-------------------------------------------------------------------------------------
 // Action creator(s)
 function increment(value) {
     return { type: INCREMENT, value }
@@ -24,7 +25,25 @@ function addNewReview(review) {
     return { type: ADD_NEW_REVIEW, review }
 }
 
-//-------------------------------------------
+let apiUrl = "http://localhost:8080/api/products/5a50a1ef06f3da38787067aa/reviews";
+function addNewReviewAsync(review) {
+    return function (dispatch) {  // thunk
+        dispatch({ type: ADD_NEW_REVIEW_BEGIN })  // init
+        $.ajax(apiUrl, {
+            method: 'POST',
+            contentType: "application/json",
+            data: JSON.stringify(review),
+            success: function (savedReview) {
+                console.dir(savedReview);
+                dispatch(addNewReview(savedReview))
+            },
+            error: function (error) {
+                dispatch({ type: ADD_NEW_REVIEW_ERROR, error })
+            }
+        });
+    }
+}
+//-------------------------------------------------------------------------------------
 // reducer(s)
 function counterReducer(state = { count: 0 }, action) {
     console.log('counter reducer');
@@ -49,36 +68,36 @@ function reviewsReducer(state = [], action) {
             return state;
     }
 }
-//-----------------------------------------------
+//-------------------------------------------------------------------------------------
 // root Reducer
 const rootReducer = combineReducers({
     counter: counterReducer,
     reviews: reviewsReducer
 });
-//-----------------------------------------------
-// store
-const initialState = {
+//-------------------------------------------------------------------------------------
+
+const preLoadedState = {
     counter: {
         count: 0
     },
     reviews: [
-        { stars: 1, author: 'nag@gmail.com', body: 'test review' }
+        { stars: 1, author: 'nag@gmail.com', body: 'test review', productId: '12345' }
     ]
 };
+//-------------------------------------------------------------------------------------
 
-// const store = createStore(rootReducer, initialState, );
-
+// const store = createStore(rootReducer, initialState,);
 
 let middleware = [thunk];
 const composeEnhancers = composeWithDevTools({
     // Specify name here, actionsBlacklist, actionsCreators and other options if needed
 });
-const store = createStore(rootReducer, initialState, composeEnhancers(
+const store = createStore(rootReducer, preLoadedState, composeEnhancers(
     applyMiddleware(...middleware),
     // other store enhancers if any
 ));
 
-//-----------------------------------------------
+//-------------------------------------------------------------------------------------
 
 
 // View ( plain JS-view / React-View / NG-view )
@@ -96,27 +115,6 @@ decBtn.addEventListener('click', function (e) {
     store.dispatch(decrement(10));
 });
 
-//------------------------------------------------------
-
-let apiUrl = "http://localhost:8080/api/products/5a50a1ef06f3da38787067aa/reviews";
-function addNewReviewAsync(review) {
-    return function (dispatch) {  // thunk
-        dispatch({ type: 'ADD_NEW_REVIEW_BEGIN' })  // init
-        $.ajax(apiUrl, {
-            method: 'POST',
-            contentType: "application/json",
-            data: JSON.stringify(review),
-            success: function (savedReview) {
-                console.dir(savedReview);
-                dispatch(addNewReview(savedReview))
-            },
-            error: function (error) {
-                dispatch({ type: 'ADD_NEW_REVIEW_ERROR', error })
-            }
-        });
-    }
-}
-//------------------------------------------------------
 newReview.addEventListener('click', function (e) {
     console.log('dispatching ADD_NEW_REVIEW action..');
     let newReview = { stars: 1, author: 'who@email.com', body: 'bla bla' }
@@ -124,19 +122,20 @@ newReview.addEventListener('click', function (e) {
     store.dispatch(addNewReviewAsync(newReview)); // Async Action
 });
 
-// counter-view-component  subscribe for state change
+
+
+// counter-view-component - subscribe for state change
 store.subscribe(function () {
     let state = store.getState();
-    console.log("counter - count :" + state.counter);
+    console.log("counter - count :")
+    console.log(state.counter);
 });
 
-
-
-// reviews-view-component subscribe for state change
+// reviews-view-component - subscribe for state change
 store.subscribe(function () {
     let state = store.getState();
     console.log('-reviews-');
     console.dir(state.reviews);
 });
 
-//-----------------------------------------------
+//-------------------------------------------------------------------------------------
