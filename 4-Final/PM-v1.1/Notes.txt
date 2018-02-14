@@ -1,8 +1,0 @@
-
-
-counter-app
---------------
-
-  -> INCREMENT
-  -> INCREMENT_ASYNC
-  -> DECREMENT
